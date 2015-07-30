@@ -1,0 +1,8 @@
+{
+  "name": "my-test-name",
+  "version": "0.0.1",
+  "dependencies": {
+    "superagent": "^1.2.0",
+    "superagent-proxy": "^1.0.0"
+  }
+}

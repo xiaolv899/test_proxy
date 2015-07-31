@@ -6,17 +6,24 @@ var superAgent = require('superagent'),
 
 var s = moment();
 
-superAgent.post('http://www.iteye.com/news/30794')
+superAgent.get('http://www.1caifu.com/')
     //.send(apiRequest)
     //.set('Content-Type', 'application/json; charset=utf-8')
-    .timeout(5000)
+    .timeout(2000)
     .end(function (err, res) {
 
         var log = 'Request:(用时%d毫秒) %s';
 
         console.log(log, moment().diff(s), '');
+        if(err){
+            //console.log('错误：');
+            //console.log(err);
+        }else{
+            //console.log(res.status);
+            //console.log(res.text);
+        }
     })
-    .on('error', function (err) {
+    /*.on('error', function (err) {
         console.log('apiHelper 请求API接口错误：');
         console.log(err);
-    });
+    })*/;

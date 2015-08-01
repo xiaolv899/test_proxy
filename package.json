@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "moment": "^2.10.6",
+    "request": "^2.60.0",
     "superagent": "^1.2.0",
     "superagent-proxy": "^1.0.0",
     "urllib": "^2.3.9"

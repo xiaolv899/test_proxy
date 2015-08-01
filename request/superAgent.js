@@ -6,7 +6,7 @@ var superAgent = require('superagent'),
 
 var s = moment();
 
-superAgent.get('http://www.1caifu.com/')
+superAgent.get('http://www.baidu.com/')
     //.send(apiRequest)
     //.set('Content-Type', 'application/json; charset=utf-8')
     .timeout(2000)

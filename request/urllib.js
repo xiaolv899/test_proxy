@@ -6,7 +6,7 @@ var urllib = require('urllib'),
 
 var s = moment();
 
-urllib.request('http://www.1caifu.com/', {
+urllib.request('http://www.baidu.com/', {
 
 }, function(err, result, res){
 

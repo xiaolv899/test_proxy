@@ -1,0 +1,59 @@
+<html>
+<body>
+<div id="output"></div>
+<script>
+    var sendMessage;
+    function checkBrowser(){
+        if (window.WebSocket){
+            log("This browser supports WebSocket!");
+        } else {
+            log("This browser does not support WebSocket.");
+        }
+    }
+    function setup(){
+        var wsServer = 'ws://localhost:8080';
+        var ws = new WebSocket(wsServer);
+
+        ws.onopen = function (e) {
+            log("Connected to WebSocket server.",e);
+            sendMessage("Conan");
+        } ;
+
+        ws.onclose = function (e) {
+            log("Disconnected",e);
+        } ;
+
+        ws.onmessage = function(e) {
+            log("RECEIVED: " + e.data, e);
+            //ws.close();
+        }
+
+        ws.onerror = function (e) {
+            log('Error occured: ' + e.data,e);
+        } ;
+
+        sendMessage = function(msg){
+            ws.send(JSON.stringify({message:msg}));
+            log("SEND : "+ msg);
+        }
+    }
+
+    function log(s,e) {
+        var output = document.getElementById("output");
+        var p = document.createElement("p");
+        p.style.wordWrap = "break-word";
+        p.style.padding="10px";
+        p.style.background="#eee";
+        p.textContent = "LOG : "+s;
+        output.appendChild(p);
+        console.log("LOG : "+s, e);
+    }
+
+    checkBrowser();
+    setup();
+</script>
+
+<input type="text" id="message" />
+<input type="button" value="send" onclick=" sendMessage && sendMessage(document.getElementById('message').value) " />
+</body>
+</html>

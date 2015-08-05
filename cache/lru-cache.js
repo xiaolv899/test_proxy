@@ -10,8 +10,13 @@ var localCache = lruCache({
 });
 
 localCache.set('bbb', 'value', 500000);
+localCache.set('ccc', 'value', 500000);
 
 var has = localCache.has('bbb');
 var val = localCache.peek('bbb');
 
-console.log(has, val);
+console.log(has, val, localCache.keys());
+
+localCache.reset();
+
+console.log(localCache.has('bbb'), localCache.keys());

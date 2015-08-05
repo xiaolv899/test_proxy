@@ -3,12 +3,14 @@
   "version": "0.0.1",
   "dependencies": {
     "express": "^4.13.2",
+    "hjs": "0.0.6",
     "lru-cache": "^2.6.5",
     "moment": "^2.10.6",
     "redis": "^0.12.1",
     "request": "^2.60.0",
     "superagent": "^1.2.0",
     "superagent-proxy": "^1.0.0",
-    "urllib": "^2.3.9"
+    "urllib": "^2.3.9",
+    "websocket": "^1.0.21"
   }
 }

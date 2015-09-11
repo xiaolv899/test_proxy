@@ -11,6 +11,7 @@
     "superagent": "^1.2.0",
     "superagent-proxy": "^1.0.0",
     "urllib": "^2.3.9",
-    "websocket": "^1.0.21"
+    "websocket": "^1.0.21",
+    "wechat": "^2.0.1"
   }
 }
